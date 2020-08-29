@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+dependencies {
+    annotationProcessor platform(project(':dependencies'))
+    annotationProcessor 'com.google.auto.service:auto-service'
+
+    compileOnly platform(project(':dependencies'))
+    compileOnly 'com.google.auto.service:auto-service-annotations'
+
+    implementation project(':annotations')
+}
+
+publishing {
+    publications {
+        processor(MavenPublication) {
+            from components.java
+        }
+    }
+}

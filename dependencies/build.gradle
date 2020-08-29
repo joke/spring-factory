@@ -1,0 +1,16 @@
+plugins {
+    id 'java-platform'
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+dependencies {
+    constraints {
+        api 'com.google.auto.service:auto-service-annotations:1.0-rc7'
+        api 'com.google.auto.service:auto-service:1.0-rc7'
+        api 'commons-io:commons-io:2.7'
+        api 'org.junit.jupiter:junit-jupiter:5.6.2'
+    }
+}

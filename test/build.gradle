@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    annotationProcessor project(':processor')
+
+    compileOnly project(':annotations')
+
+    testImplementation platform(project(':dependencies'))
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'commons-io:commons-io'
+}
+
+test {
+    useJUnitPlatform()
+}
