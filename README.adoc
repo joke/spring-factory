@@ -66,6 +66,7 @@ Simply annotate your classes and let the annotation processor do the rest.
 This works in the same fashion as `link:https://github.com/google/auto/tree/master/service[AutoService]`
 but for Spring's factory meta files.
 
+.Usage example
 [source,java]
 ----
 @SpringFactory(EnableAutoConfiguration.class)
@@ -75,6 +76,7 @@ public class MyAutoConfiguration {}
 public class MyMongoAutoConfiguration {}
 ----
 
+.Generated output `META-INF/spring.factories`
 [source,properties]
 ----
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
