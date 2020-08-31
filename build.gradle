@@ -6,7 +6,6 @@ plugins {
 allprojects { project ->
     group 'io.github.joke.spring-factory'
     description 'annotation processor for spring factories'
-    version '1.0.0'
 
     repositories {
         mavenCentral()
