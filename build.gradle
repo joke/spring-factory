@@ -47,7 +47,7 @@ allprojects { project ->
                 }
                 maven {
                     name = 'GitHubPackages'
-                    url = uri('https://maven.pkg.github.com/joke/spring-factory')
+                    url = uri("https://maven.pkg.github.com/joke/${project.name}")
                     credentials(PasswordCredentials)
                 }
             }
