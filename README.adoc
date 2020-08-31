@@ -2,6 +2,9 @@
 
 :icons: font
 
+image:https://github.com/joke/spring-factory/workflows/build/badge.svg?branch=master[]
+image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=latest%20version[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
+
 Manage your spring factories (`META-INF/spring.factories`) by annotation much like `link:https://github.com/google/auto/tree/master/service[AutoService]` does for `META-INF/services`.
 
 * @SpringFactory accepts multiple classes
