@@ -3,7 +3,8 @@
 :icons: font
 
 image:https://github.com/joke/spring-factory/workflows/build/badge.svg?branch=master[]
-image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=latest%20version[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
+image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=maven%20central[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
+image:https://api.dependabot.com/badges/status?host=github&repo=joke/spring-factory[link=https://github.com/dependabot]
 
 Manage your spring factories (`META-INF/spring.factories`) by annotation much like `link:https://github.com/google/auto/tree/master/service[AutoService]` does for `META-INF/services`.
 
@@ -14,7 +15,7 @@ Manage your spring factories (`META-INF/spring.factories`) by annotation much li
 
 == Dependency Setup
 
-image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=latest%20version[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
+image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=maven%20central[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
 
 .Gradle build.gradle
 [source,groovy]
