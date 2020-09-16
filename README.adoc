@@ -5,6 +5,7 @@
 image:https://img.shields.io/github/license/joke/spring-factory[GitHub]
 image:https://github.com/joke/spring-factory/workflows/build/badge.svg?branch=master[]
 image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=maven%20central[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
+image:https://javadoc.io/badge2/io.github.joke.spring-factory/annotations/javadoc.svg[link=https://javadoc.io/doc/io.github.joke.spring-factory/annotations]
 image:https://api.dependabot.com/badges/status?host=github&repo=joke/spring-factory[link=https://github.com/dependabot]
 
 Manage your spring factories (`META-INF/spring.factories`) by annotation much like `link:https://github.com/google/auto/tree/master/service[AutoService]` does for `META-INF/services`.
