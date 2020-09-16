@@ -2,6 +2,7 @@
 
 :icons: font
 
+image:https://img.shields.io/github/license/joke/spring-factory[GitHub]
 image:https://github.com/joke/spring-factory/workflows/build/badge.svg?branch=master[]
 image:https://img.shields.io/maven-central/v/io.github.joke.spring-factory/bom?label=maven%20central[link=https://search.maven.org/search?q=g:io.github.joke.spring-factory]
 image:https://api.dependabot.com/badges/status?host=github&repo=joke/spring-factory[link=https://github.com/dependabot]
