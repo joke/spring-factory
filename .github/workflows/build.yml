@@ -6,12 +6,9 @@ name: build
 on:
   push:
     branches:
-      - master
+      - '*'
     tags:
       - '*'
-    pull_request:
-      branches:
-        - master
 
 jobs:
   build:
@@ -19,7 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Import GPG
-        id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v3
         with:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -36,3 +32,7 @@ jobs:
           ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
           ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
           ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
+      - name: codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: processor/build/reports/jacoco/test/jacocoTestReport.xml
