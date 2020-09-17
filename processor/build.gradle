@@ -1,6 +1,9 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'info.solidsoft.pitest'
+    id 'jacoco'
+    id 'groovy'
 }
 
 dependencies {
@@ -11,6 +14,24 @@ dependencies {
     compileOnly 'com.google.auto.service:auto-service-annotations'
 
     implementation project(':annotations')
+
+    testImplementation platform(project(':dependencies'))
+    testImplementation 'org.codehaus.groovy:groovy-bom'
+    testImplementation 'org.spockframework:spock-bom'
+    testImplementation 'io.github.joke:spock-deepmock'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+pitest {
+    targetClasses = ['io.github.joke.*']
+    outputFormats = ['XML', 'HTML']
+    timestampedReports = false
+    threads = Runtime.runtime.availableProcessors()
+    junit5PluginVersion = '0.12'
+    mutators = ['ALL']
 }
 
 publishing {

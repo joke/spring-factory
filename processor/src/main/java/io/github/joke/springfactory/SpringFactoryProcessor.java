@@ -33,8 +33,8 @@ import static javax.tools.StandardLocation.CLASS_OUTPUT;
 @AutoService(Processor.class)
 public class SpringFactoryProcessor extends AbstractProcessor {
 
-    final Set<Element> originatingElements = new HashSet<>();
-    final Map<String, Set<String>> factories = new HashMap<>();
+    final protected Map<String, Set<String>> factories = new HashMap<>();
+    final protected Set<Element> originatingElements = new HashSet<>();
 
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {
@@ -55,7 +55,7 @@ public class SpringFactoryProcessor extends AbstractProcessor {
         return true;
     }
 
-    private void processAnnotations(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {
+    protected void processAnnotations(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {
         annotations.stream()
                 .map(roundEnv::getElementsAnnotatedWith)
                 .flatMap(Collection::stream)
@@ -64,7 +64,7 @@ public class SpringFactoryProcessor extends AbstractProcessor {
                 .forEach(entry -> factories.computeIfAbsent(entry.getKey(), (ignored) -> new HashSet<>()).add(entry.getValue()));
     }
 
-    private void writeSpringFactoriesFile() throws IOException {
+    protected void writeSpringFactoriesFile() throws IOException {
         final Element[] elements = new Element[originatingElements.size()];
         originatingElements.toArray(elements);
         final FileObject resource = processingEnv.getFiler().createResource(CLASS_OUTPUT, "", "META-INF/spring.factories", elements);
