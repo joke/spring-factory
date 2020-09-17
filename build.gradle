@@ -2,6 +2,7 @@ plugins {
     id 'idea'
     id 'info.solidsoft.pitest' version '1.5.2'
     id 'io.freefair.git-version' version '5.2.1'
+    id 'com.github.dkorotych.gradle-maven-exec' version '2.2.1'
 }
 
 allprojects { project ->
