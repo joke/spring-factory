@@ -36,3 +36,15 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           file: processor/build/reports/jacoco/test/jacocoTestReport.xml
+  mutation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: build
+        run: ./gradlew pitest
+      - name: striker
+        run: |
+          curl -X PUT "https://dashboard.stryker-mutator.io/api/reports/github.com/${GITHUB_REPOSITORY}/${GITHUB_REF/refs\/heads\/}" -H 'Content-Type: application/json' -H 'Host: dashboard.stryker-mutator.io' -H "X-Api-Key: ${{ secrets.STRYKER_TOKEN }}" -d @processor/build/reports/pitest/html2/report.js

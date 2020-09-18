@@ -7,6 +7,8 @@ plugins {
 }
 
 dependencies {
+    pitest 'io.github.wmaarts:pitest-mutation-testing-elements-plugin:0.3.1'
+
     annotationProcessor platform(project(':dependencies'))
     annotationProcessor 'com.google.auto.service:auto-service'
 
@@ -27,7 +29,7 @@ test {
 
 pitest {
     targetClasses = ['io.github.joke.*']
-    outputFormats = ['XML', 'HTML']
+    outputFormats = ['HTML2']
     timestampedReports = false
     threads = Runtime.runtime.availableProcessors()
     junit5PluginVersion = '0.12'

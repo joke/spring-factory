@@ -8,7 +8,7 @@ image:https://badgen.net/maven/v/maven-central/io.github.joke.spring-factory/bom
 image:https://badgen.net/github/release/joke/spring-factory/stable[]
 image:https://badgen.net/github/dependabot/joke/spring-factory[]
 image:https://badgen.net/codecov/c/github/babel/babel[link=https://codecov.io/gh/joke/spring-factory]
-image:https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fjoke%2Fspring-factory%2Fmaster)[https://dashboard.stryker-mutator.io/reports/github.com/joke/spring-factory/master]
+image:https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fjoke%2Fspring-factory%2Fmaster)[link=https://dashboard.stryker-mutator.io/reports/github.com/joke/spring-factory/master]
 
 Manage your spring factories (`META-INF/spring.factories`) by annotation much like `link:https://github.com/google/auto/tree/master/service[AutoService]` does for `META-INF/services`.
 

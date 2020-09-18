@@ -10,7 +10,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
  * Annotation for spring factories.
  * <p>
  * Annotate your spring factories and the annotation processor will
- * generate the the META-INF/spring.factories file.
+ * generate the {@code META-INF/spring.factories} file.
  */
 @Target(TYPE)
 @Retention(CLASS)
