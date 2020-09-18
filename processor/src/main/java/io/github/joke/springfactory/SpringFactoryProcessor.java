@@ -48,7 +48,7 @@ public class SpringFactoryProcessor extends AbstractProcessor {
             try {
                 writeSpringFactoriesFile();
             } catch (Exception e) {
-                throw new IllegalStateException("Failed to write spring.factories", e);
+                throw new IllegalStateException("Failed to write META-INF/spring.factories", e);
             }
         }
 
