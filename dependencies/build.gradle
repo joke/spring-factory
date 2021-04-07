@@ -12,7 +12,7 @@ dependencies {
     api platform('org.spockframework:spock-bom:2.0-M4-groovy-3.0')
 
     constraints {
-        api 'com.google.auto.service:auto-service-annotations:1.0-rc7'
+        api 'com.google.auto.service:auto-service-annotations:1.0'
         api 'com.google.auto.service:auto-service:1.0-rc7'
         api 'commons-io:commons-io:2.8.0'
         api 'io.github.joke:spock-deepmock:2.0.1'
