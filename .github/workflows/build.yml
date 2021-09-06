@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Import GPG
-        uses: crazy-max/ghaction-import-gpg@v3.2.0
+        uses: crazy-max/ghaction-import-gpg@v4
         with:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
       - uses: actions/setup-java@v2
