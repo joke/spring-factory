@@ -18,7 +18,7 @@ jobs:
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v4
         with:
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
       - uses: actions/setup-java@v2
         with:
           java-version: 8
