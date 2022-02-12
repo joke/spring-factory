@@ -2,7 +2,6 @@ plugins {
     id 'idea'
     id 'info.solidsoft.pitest' version '1.7.0'
     id 'com.github.arcticlampyrid.gradle-git-version' version '1.0.4'
-    id 'com.github.dkorotych.gradle-maven-exec' version '2.2.1'
 }
 
 allprojects { project ->
