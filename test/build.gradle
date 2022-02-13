@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    annotationProcessor project(':processor')
+
+    compileOnly project(':annotations')
+
+    testImplementation platform(project(':dependencies'))
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'commons-io:commons-io'
+}
+
+task testWithMaven(type: JavaExec) {
+    group 'verification'
+    dependsOn ':processor:publishToMavenLocal', ':bom:publishToMavenLocal', ':annotations:publishToMavenLocal'
+
+    workingDir projectDir
+    classpath files("$projectDir/.mvn/wrapper/maven-wrapper.jar")
+    mainClass = 'org.apache.maven.wrapper.MavenWrapperMain'
+    jvmArgs(['-Dmaven.multiModuleProjectDirectory'])
+    args(['-DinteractiveMode=false', "-Dspring-factory.version=${project.version}", 'clean', 'verify'])
+}
+check.dependsOn testWithMaven
+
+test {
+    useJUnitPlatform()
+}

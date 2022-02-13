@@ -7,6 +7,7 @@ plugins {
 allprojects { project ->
     group 'io.github.joke.spring-factory'
     description 'annotation processor for spring factories'
+    version rootProject.version
 
     repositories {
         mavenCentral()
@@ -28,13 +29,13 @@ allprojects { project ->
         }
 
         plugins.withType(SigningPlugin) {
-            afterEvaluate {
-                signing {
-                    required {
-                        gradle.taskGraph.hasTask('publish')
-                    }
-                    useGpgCmd()
-                    sign publishing.publications
+            signing {
+                useGpgCmd()
+                sign publishing.publications
+            }
+            tasks.withType(Sign) {
+                onlyIf {
+                    gradle.taskGraph.allTasks.any { it.name ==~ /.*PublicationToOSSRH.*/ || it.name ==~  /.*PublicationToGitHub.*/ }
                 }
             }
         }
