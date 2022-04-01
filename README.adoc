@@ -95,4 +95,3 @@ package.name.of.second.class.MyMongoAutoConfiguration
 org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo=\
 package.name.of.second.class.MyMongoAutoConfiguration
 ----
-

@@ -3,7 +3,7 @@ name: release
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
   release-please:
@@ -11,32 +11,32 @@ jobs:
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v3.1
-        id: release
-        with:
-          release-type: simple
+    - uses: GoogleCloudPlatform/release-please-action@v3.1
+      id: release
+      with:
+        release-type: simple
 
   publish:
     needs: release-please
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ needs.jobs.release-please.steps.release.outputs.tag_name }}
-      - uses: crazy-max/ghaction-import-gpg@v4
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-      - uses: actions/setup-java@v2
-        with:
-          java-version: 8
-          distribution: zulu
-      - name: build
-        run: ./gradlew check
-      - name: publish
-        run: ./gradlew publish
-        env:
-          ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
-          ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
-          ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
-          ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ needs.jobs.release-please.steps.release.outputs.tag_name }}
+    - uses: crazy-max/ghaction-import-gpg@v4
+      with:
+        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+    - uses: actions/setup-java@v2
+      with:
+        java-version: 8
+        distribution: zulu
+    - name: build
+      run: ./gradlew check
+    - name: publish
+      run: ./gradlew publish
+      env:
+        ORG_GRADLE_PROJECT_OSSRHUsername: ${{ secrets.OSSRH_USERNAME }}
+        ORG_GRADLE_PROJECT_OSSRHPassword: ${{ secrets.OSSRH_TOKEN }}
+        ORG_GRADLE_PROJECT_GitHubPackagesUsername: ${{ secrets.GITHUB_ACTOR }}
+        ORG_GRADLE_PROJECT_GitHubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
