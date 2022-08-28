@@ -18,8 +18,7 @@ dependencies {
     implementation project(':annotations')
 
     testImplementation platform(project(':dependencies'))
-    testImplementation 'org.codehaus.groovy:groovy-bom'
-    testImplementation 'org.spockframework:spock-bom'
+    testImplementation 'org.spockframework:spock-core'
     testImplementation 'io.github.joke:spock-deepmock'
 }
 
