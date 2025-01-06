@@ -12,8 +12,8 @@ dependencies {
     api platform('org.spockframework:spock-bom:2.1-groovy-3.0')
 
     constraints {
-        api 'com.google.auto.service:auto-service-annotations:1.0.1'
-        api 'com.google.auto.service:auto-service:1.0.1'
+        api 'com.google.auto.service:auto-service-annotations:1.1.1'
+        api 'com.google.auto.service:auto-service:1.1.1'
         api 'commons-io:commons-io:2.11.0'
         api 'io.github.joke:spock-deepmock:4.0.0'
         api 'org.junit.jupiter:junit-jupiter:5.9.1'
