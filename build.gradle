@@ -1,6 +1,6 @@
 plugins {
     id 'idea'
-    id 'info.solidsoft.pitest' version '1.9.11'
+    id 'info.solidsoft.pitest' version '1.15.0'
     id 'com.github.arcticlampyrid.gradle-git-version' version '1.0.4'
 }
 
