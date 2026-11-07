@@ -112,5 +112,5 @@ allprojects { project ->
 
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = '7.4'
+    gradleVersion = '9.9.0'
 }
